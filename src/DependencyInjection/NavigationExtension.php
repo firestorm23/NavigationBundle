@@ -133,7 +133,7 @@ class NavigationExtension extends Extension
      */
     private function createMenuItem($name, $options = array())
     {
-        unset($options['items']);
+        unset($options['children']);
 
         $def = new Definition('Knp\Menu\MenuFactory');
         $this->setFactoryService($def, 'knp_menu.factory', 'createItem');
@@ -186,11 +186,11 @@ class NavigationExtension extends Extension
             return new Expression($item['expression']);
         }
 
-        if (!empty($item['items'])) {
-            $childItems = $item['items'];
+        if (!empty($item['children'])) {
+            $childItems = $item['children'];
 
             // Don't pass the items to the factory
-            unset($item['items'], $item['expression']);
+            unset($item['children'], $item['expression']);
 
             $definition = $this->createMenuItem($name, $item);
             $this->buildMenuDefinition($definition, $childItems);
@@ -198,7 +198,7 @@ class NavigationExtension extends Extension
             return $definition;
         }
 
-        unset($item['items'], $item['expression']);
+        unset($item['children'], $item['expression']);
 
         return $item;
     }
