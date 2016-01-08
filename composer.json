@@ -1,6 +1,6 @@
 {
-    "name": "rollerworks/navigation-bundle",
-    "description": "Symfony bundle for defining menu-structures and breadcrumbs in the KnpMenuBundle",
+    "name": "firestorm23/NavigationBundle",
+    "description": "Fork of rollerworks/navigation-bundle",
     "license": "MIT",
     "authors": [
         {
