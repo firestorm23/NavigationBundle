@@ -39,6 +39,8 @@ class NavigationExtension extends Extension
 
         $this->registerMenus($config['menus'], $container);
         $this->registerBreadcrumbs($config['breadcrumbs'], $container);
+
+        $container->compile();
     }
 
     /**
