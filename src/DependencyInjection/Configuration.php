@@ -125,7 +125,7 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
-                ->arrayNode('items')
+                ->arrayNode('children')
                     ->useAttributeAsKey('name')
                     ->prototype('variable')->end() // use variable as we can't nest to deep
                 ->end()
