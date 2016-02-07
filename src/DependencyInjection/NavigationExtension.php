@@ -58,6 +58,10 @@ class NavigationExtension extends Extension
     private function registerMenus(array $menus, ContainerBuilder $container)
     {
         foreach ($menus as $name => $menu) {
+
+            $menu['options'] = $this->resolveParameters($menu['options']);
+            $menu = array_merge($menu['options'], $menu);
+
             $def = $this->createMenuItem('root', $this->resolveParameters($menu));
             $def->setTags(array('knp_menu.menu' => array(array('alias' => $name))));
             $this->buildMenuDefinition($def, $menu['items']);
